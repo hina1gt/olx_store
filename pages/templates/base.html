@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Main page
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <div class="bar">
+        <img class="logo" src="{% static 'images/jpg/logo(1).jpg' %}" height="200px" width="320px" alt="olx"/>
+        
+        {% include 'includes/navbar.html' %} 
+    </div>
+        {% block content %}
+            {% include 'pages/categories.html' %} 
+        {% endblock %}
+        {% include 'includes/footer.html' %} 
+    
+</body>
+</html>
+<body>
