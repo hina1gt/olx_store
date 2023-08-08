@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Login page
+    Create an account
 {% endblock %}
 
 {% block content %}
     <div class="loggg">
-        <h1 id="loging">Log in</h1>
+        <h1 id="loging">Sign up</h1>
             <div id="loginout">
-                If you don't have an account, please <a href="{% url 'register' %}">sign up</a>
                 <form action="" method="post">
-                    {{ form.as_p }}
+                    {{ user_form.as_p }}
                     {% csrf_token %}
                     <input type="hidden" name="next" value="{{ next }}">
                     <p id="inp">
