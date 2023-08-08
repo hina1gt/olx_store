@@ -12,7 +12,8 @@ class Clothes(models.Model):
     author = models.CharField(max_length=20, blank=True, null=True)
     author_num = models.PositiveIntegerField()
     condition = models.CharField(max_length=4, choices=Status.choices, default=Status.NEW, blank=True, null=True)
-    def str(self):
+    
+    def __str__(self):
         return self.title
     
     class Meta:
@@ -30,8 +31,10 @@ class Electronics(models.Model):
     author = models.CharField(max_length=20, blank=True, null=True)
     author_num = models.PositiveIntegerField()
     condition = models.CharField(max_length=4, choices=Status.choices, default=Status.NEW, blank=True, null=True)
-    def str(self):
+    
+    def __str__(self):
         return self.title
+    
     class Meta:
         ordering = ['-id']
 
@@ -47,8 +50,10 @@ class Furnutures(models.Model):
     author = models.CharField(max_length=20, blank=True, null=True)
     author_num = models.PositiveIntegerField()
     condition = models.CharField(max_length=4, choices=Status.choices, default=Status.NEW, blank=True, null=True)
-    def str(self):
+
+    def __str__(self):
         return self.title
+    
     class Meta:
         ordering = ['-id']
 
@@ -64,8 +69,10 @@ class Sports(models.Model):
     author = models.CharField(max_length=20, blank=True, null=True)
     author_num = models.PositiveIntegerField()
     condition = models.CharField(max_length=4, choices=Status.choices, default=Status.NEW, blank=True, null=True)
-    def str(self):
+    
+    def __str__(self):
         return self.title
+    
     class Meta:
         ordering = ['-id']
 
@@ -81,7 +88,9 @@ class Households(models.Model):
     author = models.CharField(max_length=20, blank=True, null=True)
     author_num = models.PositiveIntegerField()
     condition = models.CharField(max_length=4, choices=Status.choices, default=Status.NEW, blank=True, null=True)
-    def str(self):
+    
+    def __str__(self):
         return self.title
+    
     class Meta:
         ordering = ['-id']

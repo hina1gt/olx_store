@@ -149,3 +149,11 @@ h1 {
     position: relative;
     bottom: 200px;
 }
+#log {
+    position: relative;
+    left: 1400px;
+    bottom: 200px;
+}
+#lll {
+    font-weight: bold;
+}

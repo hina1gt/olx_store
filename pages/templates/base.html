@@ -16,6 +16,15 @@
         <img class="logo" src="{% static 'images/jpg/logo(1).jpg' %}" height="200px" width="320px" alt="olx"/>
         
         {% include 'includes/navbar.html' %} 
+        <div id="log">
+            {% if request.user.is_authenticated %}
+                Hello, {{request.user.first_name|default:request.user.username}}
+                <a href="{% url 'logout' %}">Log out</a>
+            {% else %}
+                <a id="lll" href="{% url 'login' %}">Log in</a>
+            {% endif %}
+        
+        </div>
     </div>
         {% block content %}
             {% include 'pages/categories.html' %} 
