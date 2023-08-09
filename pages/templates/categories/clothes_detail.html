@@ -16,6 +16,10 @@
         <p>Date: {{ cloth.date }}</p>
         <p>Author's number: +{{ cloth.author_num}}</p>
         <button class="button-1" role="button">Buy Now </button>
-        
+        <p id="du">
+            <a href="{{ product.get_absolute_url}}delete">Delete</a>
+            <a href="{{ product.get_absolute_url}}update">Update</a>
+        </p>
     </div>
+    
 {% endblock %}

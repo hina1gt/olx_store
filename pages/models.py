@@ -1,11 +1,12 @@
 from django.db import models
+from django.urls import reverse
 
 class Clothes(models.Model):
     class Status(models.TextChoices):
         NEW = 'New', 'NEW'
         USED = 'Used', 'USED'
     title = models.CharField(max_length=50)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True, blank=True, null=True)
     image = models.ImageField(upload_to='clothes/%Y%m%d/')
     description = models.TextField()
     price = models.PositiveIntegerField()
@@ -16,6 +17,12 @@ class Clothes(models.Model):
     def __str__(self):
         return self.title
     
+    def get_absolute_url(self):
+        return reverse(
+            'clothes_detail', 
+            args=[self.pk]
+        )
+    
     class Meta:
         ordering = ['-id']
 
@@ -24,7 +31,7 @@ class Electronics(models.Model):
         NEW = 'New', 'NEW'
         USED = 'Used', 'USED'
     title = models.CharField(max_length=50)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True, blank=True, null=True)
     image = models.ImageField(upload_to='clothes/%Y%m%d/')
     description = models.TextField()
     price = models.PositiveIntegerField()
@@ -43,7 +50,7 @@ class Furnutures(models.Model):
         NEW = 'New', 'NEW'
         USED = 'Used', 'USED'
     title = models.CharField(max_length=50)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True, blank=True, null=True)
     image = models.ImageField(upload_to='clothes/%Y%m%d/')
     description = models.TextField()
     price = models.PositiveIntegerField()
@@ -62,7 +69,7 @@ class Sports(models.Model):
         NEW = 'New', 'NEW'
         USED = 'Used', 'USED'
     title = models.CharField(max_length=50)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True, blank=True, null=True)
     image = models.ImageField(upload_to='clothes/%Y%m%d/')
     description = models.TextField()
     price = models.PositiveIntegerField()
@@ -81,7 +88,7 @@ class Households(models.Model):
         NEW = 'New', 'NEW'
         USED = 'Used', 'USED'
     title = models.CharField(max_length=50)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True, blank=True, null=True)
     image = models.ImageField(upload_to='clothes/%Y%m%d/')
     description = models.TextField()
     price = models.PositiveIntegerField()

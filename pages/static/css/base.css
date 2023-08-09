@@ -177,6 +177,9 @@ h1 {
 .loggg {
     background-color: rgb(255, 254, 254) ;
 }
+.loggg p {
+    text-align: center;
+}
 .logout {
     text-align: center;
     background-color: rgb(255, 254, 254) ;
@@ -186,4 +189,12 @@ h1 {
 }
 a:hover {
     color: aqua;
+}
+.create {
+    text-align: center;
+}
+#du {
+    position: relative;
+    bottom: 300px;
+    left: 95px;
 }
