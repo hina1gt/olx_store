@@ -42,6 +42,12 @@ class Electronics(models.Model):
     def __str__(self):
         return self.title
     
+    def get_absolute_url(self):
+        return reverse(
+            'elec_detail', 
+            args=[self.pk]
+        )
+    
     class Meta:
         ordering = ['-id']
 
@@ -60,6 +66,12 @@ class Furnutures(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse(
+            'fur_detail', 
+            args=[self.pk]
+        )
     
     class Meta:
         ordering = ['-id']
@@ -80,6 +92,12 @@ class Sports(models.Model):
     def __str__(self):
         return self.title
     
+    def get_absolute_url(self):
+        return reverse(
+            'sport_detail', 
+            args=[self.pk]
+        )
+    
     class Meta:
         ordering = ['-id']
 
@@ -98,6 +116,12 @@ class Households(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse(
+            'house_detail', 
+            args=[self.pk]
+        )
     
     class Meta:
         ordering = ['-id']

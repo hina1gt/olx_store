@@ -84,6 +84,36 @@ def elec_detail(request, pk):
         'categories/elec_detail.html',
         context
     )
+def elec_delete(request, pk):
+    product = Electronics.objects.get(id=pk)
+    product.delete()
+    return redirect(to='clothes')
+def elec_update(request, pk):
+    product = Electronics.objects.get(id=pk)
+    form = ProductForm2()
+    if request.method == 'POST':
+        form = ProductForm2(request.POST, request.FILES)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            image = form.cleaned_data['image']
+            description = form.cleaned_data['description']
+            price = form.cleaned_data['price']
+            author = form.cleaned_data['author']
+            authornum = form.cleaned_data['author_num']
+            condition = form.cleaned_data['condition']
+            product.title = title
+            product.image = image
+            product.description = description
+            product.price = price
+            product.author = author
+            product.author_num = authornum
+            product.condition = condition
+            product.save()
+            return redirect(to='electronics')
+    context = {
+        'form': form
+    }
+    return render(request, 'pages/update.html', context)
 @login_required(login_url='login')
 def furnitures(request):
     furnitures = Furnutures.objects.all()
@@ -104,6 +134,36 @@ def fur_detail(request, pk):
         'categories/fur_detail.html',
         context
     )
+def fur_delete(request, pk):
+    product = Furnutures.objects.get(id=pk)
+    product.delete()
+    return redirect(to='furnitures')
+def fur_update(request, pk):
+    product = Furnutures.objects.get(id=pk)
+    form = ProductForm3()
+    if request.method == 'POST':
+        form = ProductForm3(request.POST, request.FILES)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            image = form.cleaned_data['image']
+            description = form.cleaned_data['description']
+            price = form.cleaned_data['price']
+            author = form.cleaned_data['author']
+            authornum = form.cleaned_data['author_num']
+            condition = form.cleaned_data['condition']
+            product.title = title
+            product.image = image
+            product.description = description
+            product.price = price
+            product.author = author
+            product.author_num = authornum
+            product.condition = condition
+            product.save()
+            return redirect(to='furnitures')
+    context = {
+        'form': form
+    }
+    return render(request, 'pages/update.html', context)
 @login_required(login_url='login')
 def sports(request):
     sports = Sports.objects.all()
@@ -128,6 +188,36 @@ def sports_detail(request, pk):
         'categories/sport_detail.html',
         context
     )
+def sports_delete(request, pk):
+    product = Sports.objects.get(id=pk)
+    product.delete()
+    return redirect(to='sports')
+def sports_update(request, pk):
+    product = Sports.objects.get(id=pk)
+    form = ProductForm4()
+    if request.method == 'POST':
+        form = ProductForm4(request.POST, request.FILES)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            image = form.cleaned_data['image']
+            description = form.cleaned_data['description']
+            price = form.cleaned_data['price']
+            author = form.cleaned_data['author']
+            authornum = form.cleaned_data['author_num']
+            condition = form.cleaned_data['condition']
+            product.title = title
+            product.image = image
+            product.description = description
+            product.price = price
+            product.author = author
+            product.author_num = authornum
+            product.condition = condition
+            product.save()
+            return redirect(to='sports')
+    context = {
+        'form': form
+    }
+    return render(request, 'pages/update.html', context)
 @login_required(login_url='login')
 def households(request):
     households = Households.objects.all()
@@ -152,6 +242,36 @@ def house_detail(request, pk):
         'categories/house_detail.html',
         context
     )
+def house_delete(request, pk):
+    product = Households.objects.get(id=pk)
+    product.delete()
+    return redirect(to='household')
+def house_update(request, pk):
+    product = Households.objects.get(id=pk)
+    form = ProductForm5()
+    if request.method == 'POST':
+        form = ProductForm5(request.POST, request.FILES)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            image = form.cleaned_data['image']
+            description = form.cleaned_data['description']
+            price = form.cleaned_data['price']
+            author = form.cleaned_data['author']
+            authornum = form.cleaned_data['author_num']
+            condition = form.cleaned_data['condition']
+            product.title = title
+            product.image = image
+            product.description = description
+            product.price = price
+            product.author = author
+            product.author_num = authornum
+            product.condition = condition
+            product.save()
+            return redirect(to='household')
+    context = {
+        'form': form
+    }
+    return render(request, 'pages/update.html', context)
 def cart(request):
     return render(request, 'pages/cart.html')
 @login_required(login_url='login')
