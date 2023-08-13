@@ -47,4 +47,3 @@ def register(request):
         'user_form': user_form
     }
     return render(request, 'account/register.html', context)
-

@@ -198,3 +198,12 @@ a:hover {
     bottom: 300px;
     left: 95px;
 }
+#center {
+    text-align: center;
+}
+.more {
+    position: relative;
+    top: 300px;
+    font-size: 12pt;
+    text-align: center;
+}

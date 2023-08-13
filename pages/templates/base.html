@@ -22,12 +22,14 @@
             {% else %}
                 <a id="lll" href="{% url 'login' %}">Log in</a>
             {% endif %}
-        
         </div>
     </div>
         {% block content %}
             {% include 'pages/categories.html' %} 
         {% endblock %}
+        {% if request.user.is_authenticated %}
+            <p class="more"><a href="{% url 'password_change' %}">Change password</a></p>
+        {% endif %}
         {% include 'includes/footer.html' %} 
 
         
